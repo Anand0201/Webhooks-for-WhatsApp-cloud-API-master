@@ -89,7 +89,7 @@ app.post("/send-message", (req, res) => {
 
     axios({
         method: "POST",
-        url: 'https://graph.facebook.com/v13.0/339788665888060/messages?access_token=${token}',
+        url: `https://graph.facebook.com/v13.0/339788665888060/messages?access_token=${token}`,
         data: {
             messaging_product: "whatsapp",
             to: phoneNumber,
