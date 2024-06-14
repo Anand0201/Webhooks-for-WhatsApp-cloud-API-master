@@ -80,3 +80,31 @@ app.post("/webhook",(req,res)=>{ //i want some
 app.get("/",(req,res)=>{
     res.status(200).send("hello this is webhook setup");
 });
+
+app.post("/send-message", (req, res) => {
+    const phoneNumber = req.body.phoneNumber;
+    const message = req.body.message;
+
+    axios({
+        method: "POST",
+        url: https://graph.facebook.com/v13.0/your_phone_number_id/messages?access_token=${token},
+        data: {
+            messaging_product: "whatsapp",
+            to: phoneNumber,
+            text: {
+                body: message
+            }
+        },
+        headers: {
+            "Content-Type": "application/json"
+        }
+    })
+    .then(response => {
+        console.log("Message sent successfully:", response.data);
+        res.status(200).send("Message sent successfully");
+    })
+    .catch(error => {
+        console.error("Error sending message:", error);
+        res.status(500).send("Error sending message");
+    });
+});
