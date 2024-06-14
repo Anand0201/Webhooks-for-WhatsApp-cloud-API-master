@@ -4,6 +4,8 @@ const axios=require("axios");
 require('dotenv').config();
 
 const app=express().use(body_parser.json());
+app.use(express.urlencoded({ extended : true }))
+app.use(express.json());
 
 const token=process.env.TOKEN;
 const mytoken=process.env.MYTOKEN;//prasath_token
