@@ -84,7 +84,7 @@ app.get("/",(req,res)=>{
 });
 
 app.post("/send-message", (req, res) => {
-    const phoneNumber = '+919328546083';
+    const phoneNumber = '919328546083';
     const message = req.body.message;
 
     axios({
