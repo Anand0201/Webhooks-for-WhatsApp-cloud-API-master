@@ -7,8 +7,8 @@ const app=express().use(body_parser.json());
 app.use(express.urlencoded({ extended : true }))
 app.use(express.json());
 
-const token=process.env.TOKEN;
-const mytoken=process.env.MYTOKEN;//prasath_token
+const token='EAARBsuHJIXcBO4vOzkkC9yTXakbtmCd6qYJ637lFsLDVTu9vK9iyCpdvFSoA33XtTUKNdnwFx6sxIa4YuuqSEymvlkYzswCXf0hsiuKemPUtiGY0eo5sooArex4ZAxIuFF92s46tZCDZCVhSUNYWRpmDCFvyZCban2P3ZB9oZChveZA9PRS29q9j9ws1h2hkQPqDPOFddM7e5q64btQpkhx';
+const mytoken='0TE';
 
 app.listen(process.env.PORT,()=>{
     console.log("webhook is listening");
@@ -84,7 +84,7 @@ app.get("/",(req,res)=>{
 });
 
 app.post("/send-message", (req, res) => {
-    const phoneNumber = req.body.phoneNumber;
+    const phoneNumber = '+919328546083';
     const message = req.body.message;
 
     axios({
